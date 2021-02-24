@@ -1,15 +1,8 @@
-from tensorflow.keras import models,layers
+from sklearn.linear_model import LinearRegression
 
-def init_nn_binary_classifier():
+def init_linreg():
 
     ### Model architecture
-    model = models.Sequential()
-    model.add(layers.Dense(100, input_dim=2, activation='relu'))
-    ### size 1 (predict one value):
-    model.add(layers.Dense(1, activation='sigmoid'))
+    model = LinearRegression()
 
-    ### Model optimization : Optimizer, loss and metric
-    model.compile(loss='binary_crossentropy',
-                  optimizer='adam',
-                  metrics=['accuracy'])
     return model
